@@ -1,9 +1,11 @@
-var car = {
-    make: "Honda",
-    model: "Fit",
-    year: 2012,
-    honk: function() { alert("Beep beep"); },
-    driver: { name: "Andrew", license: "CA" }
+var request = new XMLHttpRequest();
+
+request.open('GET', "https://hplussport.com/api/products");
+
+request.onload = function() {
+    var response = request.response;
+    var parsedData = JSON.parse(response);
+    console.log(parsedData);
 }
-console.log(car.make);
-console.log(car.driver.name);
+
+request.send();
