@@ -9,8 +9,10 @@ request.open('GET', 'https://api.giphy.com/v1/gifs/random?' +
 request.onload = function() {
     const parsedData = JSON.parse(request.response);
     console.log(parsedData);
-    const url = parsedData.data.images.original.url;
-    console.log(url)
+    const url = parsedData.data.image_original_url;
+    const gif = document.createElement('img');
+    gif.setAttribute('src', url);
+    document.body.appendChild(gif);
 }
 
 request.send();
