@@ -6,7 +6,7 @@ request.onload = function() {
     const parsedData = JSON.parse(request.response);
     console.log(parsedData);
 
-    for(item in parsedData) {
+    for(let item in parsedData) {
         //Display all the product names
         const products = document.createElement('li');
         products.innerHTML = parsedData[item].name;
