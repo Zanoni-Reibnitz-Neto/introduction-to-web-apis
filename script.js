@@ -1,18 +1,14 @@
 const request = new XMLHttpRequest();
 
-request.open('GET', 'https://api.giphy.com/v1/gifs/random?' +
-    'tag=squirrel&' +
-    'rating=g&' +
-    'api_key=ZsEyWb6yPClrya3ZgDUrQV1CNqfrpmAd'
-);
+request.open('GET', 'https://hplussport.com/api/product1');
 
-request.onload = function() {
+request.onload = function () {
     const parsedData = JSON.parse(request.response);
     console.log(parsedData);
-    const url = parsedData.data.image_original_url;
-    const gif = document.createElement('img');
-    gif.setAttribute('src', url);
-    document.body.appendChild(gif);
+}
+
+request.onerror = function () {
+    console.log("There seems to be a problem!");
 }
 
 request.send();
