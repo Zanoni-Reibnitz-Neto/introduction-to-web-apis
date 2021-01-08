@@ -6,6 +6,8 @@ request.onload = function() {
     const response = request.response;
     const parsedData = JSON.parse(response);
     console.log(parsedData);
+    const description = parsedData[0].description;
+    console.log(description);
 }
 
 request.send();
